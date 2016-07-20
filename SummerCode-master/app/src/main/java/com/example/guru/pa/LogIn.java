@@ -55,6 +55,8 @@ public class LogIn extends AppCompatActivity {
                     }else{
                         Toast.makeText(LogIn.this,"登录成功", Toast.LENGTH_SHORT).show();
                         // 跳转到主界面
+                        MainActivity.LOGGEDIN = true;
+                        MainActivity.USERNAME = name;
                         Intent in = new Intent();
                         in.setClass(LogIn.this, MainActivity.class);
                         startActivity(in);

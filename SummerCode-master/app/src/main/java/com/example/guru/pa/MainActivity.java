@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
@@ -24,7 +25,8 @@ public class MainActivity extends AppCompatActivity
     public static SubActionButton button1;
     public static SubActionButton button2;
     public static SubActionButton button3;
-
+    public static Boolean LOGGEDIN = false;
+    public static String USERNAME;
     //public final  static  String EXSTRA_MESSAGE = "com.example.guru.pa.MESSAGE";
     public void openPersonalCenter(View view){
         Intent intent = new Intent(this, LogIn.class);
@@ -118,6 +120,11 @@ public class MainActivity extends AppCompatActivity
                     startActivity(intent);
                 }
             } );
+        }
+
+        if(MainActivity.LOGGEDIN){
+            TextView tv = (TextView) cir.findViewById(R.id.logged_username);
+            tv.setText(USERNAME);
         }
 
     }
