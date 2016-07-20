@@ -45,7 +45,7 @@ public class LogIn extends AppCompatActivity {
             }
             public Boolean isUserinfo(String name, String pwd) {
                 try{
-                    String str="select * from tb_user where name=? and password=?";
+                    String str="select name, password from tb_user where name=? and password=?";
                     Cursor cursor = db.rawQuery(str, new String []{name,pwd});
                     if(cursor.getCount()<=0){
                         new AlertDialog.Builder(LogIn.this).setTitle("错误")
